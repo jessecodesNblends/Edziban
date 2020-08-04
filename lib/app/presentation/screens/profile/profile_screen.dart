@@ -201,8 +201,6 @@ class _ProfileScreenState extends State<ProfileScreen>
                         productName: product['name'],
                         productPrice: product['price'],
                         productUrl: product['image'],
-                        productClients: product['clients'],
-                        productRate: product['rate'],
                       ),
                     );
                   }).toList(),

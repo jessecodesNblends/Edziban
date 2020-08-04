@@ -38,8 +38,6 @@ List<Product> allFoods = [
     category: 'c3',
     name: 'Tandoori Chicken',
     price: '96.00',
-    clients: '200',
-    rate: '4.9',
     image: 'images/plate-001.png',
   ),
   Product(
@@ -47,8 +45,6 @@ List<Product> allFoods = [
     category: 'c1',
     name: 'Salmon',
     price: '40.00',
-    clients: '200',
-    rate: '4.5',
     image: 'images/plate-002.png',
   ),
   Product(
@@ -56,8 +52,6 @@ List<Product> allFoods = [
     category: 'c4',
     name: 'Rice and meat',
     price: '130.00',
-    clients: '150',
-    rate: '4.8',
     image: 'images/plate-003.png',
   ),
   Product(
@@ -65,8 +59,6 @@ List<Product> allFoods = [
     category: 'c4',
     name: 'Vegan Food',
     price: '400.00',
-    clients: '150',
-    rate: '4.2',
     image: 'images/plate-007.png',
   ),
   Product(
@@ -74,8 +66,6 @@ List<Product> allFoods = [
     category: 'c2',
     name: 'Rich Food',
     price: '1000.00',
-    clients: '10',
-    rate: '4.6',
     image: 'images/plate-006.png',
   ),
 ];

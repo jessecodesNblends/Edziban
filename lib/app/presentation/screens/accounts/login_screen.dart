@@ -3,7 +3,6 @@ import 'package:edziban/app/resources/dimens.dart';
 import 'package:flutter/material.dart';
 
 // App imports
-
 import '../../../app.dart';
 
 class LoginScreen extends StatelessWidget {
