@@ -1,4 +1,4 @@
-import 'package:edziban/app/data/models/home/data_source.dart';
+import 'package:edziban/app/data/data_source.dart';
 import 'package:edziban/app/domain/entities/home/category.dart';
 import 'package:flutter/material.dart';
 

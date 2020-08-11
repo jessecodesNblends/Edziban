@@ -198,9 +198,6 @@ class _ProfileScreenState extends State<ProfileScreen>
                       child: FoodCard(
                         width: size.width,
                         primaryColor: theme.primaryColor,
-                        productName: product['name'],
-                        productPrice: product['price'],
-                        productUrl: product['image'],
                       ),
                     );
                   }).toList(),

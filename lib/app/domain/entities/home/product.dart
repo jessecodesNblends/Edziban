@@ -1,7 +1,6 @@
-import 'package:equatable/equatable.dart';
 import 'package:flutter/foundation.dart';
 
-class Product extends Equatable {
+class Product extends ChangeNotifier {
   final String id; // PK
   final String category; // FK
   final String name;
@@ -15,9 +14,11 @@ class Product extends Equatable {
     @required this.name,
     @required this.price,
     @required this.image,
-    this.isFavourite,
+    this.isFavourite = false,
   });
 
-  @override
-  List<Object> get props => [id, category, name, price, image, isFavourite];
+  void toggleFavouriteStatus() {
+    isFavourite = !isFavourite;
+    notifyListeners();
+  }
 }

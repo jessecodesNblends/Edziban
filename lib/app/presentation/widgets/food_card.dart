@@ -1,16 +1,16 @@
+import 'package:edziban/app/domain/entities/home/product.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class FoodCard extends StatelessWidget {
+  final Product product;
   final double width;
   final Color primaryColor;
-  final String productUrl, productName, productPrice;
 
   FoodCard({
+    @required this.product,
     @required this.width,
     @required this.primaryColor,
-    @required this.productUrl,
-    @required this.productName,
-    @required this.productPrice,
   });
 
   @override
@@ -28,7 +28,7 @@ class FoodCard extends StatelessWidget {
                 height: 140.0,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                    image: AssetImage(productUrl),
+                    image: AssetImage(product.image),
                   ),
                 ),
               ),
@@ -47,10 +47,20 @@ class FoodCard extends StatelessWidget {
                     shape: BoxShape.circle,
                     color: Colors.white,
                   ),
-                  child: Icon(
-                    Icons.favorite,
-                    size: 17.0,
-                    color: primaryColor,
+                  child: Consumer<Product>(
+                    builder: (context, product, child) => IconButton(
+                      icon: Icon(
+                        product.isFavourite
+                            ? Icons.favorite
+                            : Icons.favorite_border,
+                        size: 17.0,
+                        color: primaryColor,
+                      ),
+                      onPressed: () {
+                        product.toggleFavouriteStatus();
+                        print(product.isFavourite);
+                      },
+                    ),
                   ),
                 ),
               )
@@ -66,7 +76,7 @@ class FoodCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: <Widget>[
                 Text(
-                  productName,
+                  product.name,
                   style: TextStyle(
                     fontSize: 14.0,
                   ),
@@ -105,7 +115,7 @@ class FoodCard extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  '\$ $productPrice',
+                  '\$ ${product.price}',
                   style: TextStyle(
                     fontSize: 13.0,
                   ),

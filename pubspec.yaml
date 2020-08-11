@@ -26,7 +26,8 @@ dependencies:
   equatable: ^1.2.3
   provider: ^4.3.1
   shared_preferences: ^0.5.8
-  connectivity: ^0.4.9
+  # connectivity: ^0.4.9
+  data_connection_checker: ^0.3.4
   http: ^0.12.2
   dartz: ^0.9.1
   mockito: ^4.1.1

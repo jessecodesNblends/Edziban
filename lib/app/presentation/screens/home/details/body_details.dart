@@ -28,8 +28,8 @@ class _BodyDetailsState extends State<BodyDetails>
 
   @override
   Widget build(BuildContext context) {
-    final Map screenArguments = ModalRoute.of(context).settings.arguments;
-    Map product = screenArguments['product'];
+    final productId = ModalRoute.of(context).settings.arguments as String;
+
     ThemeData theme = Theme.of(context);
     Size size = MediaQuery.of(context).size;
 
@@ -92,11 +92,11 @@ class _BodyDetailsState extends State<BodyDetails>
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
                           Text(
-                            product['name'],
+                            '',
                             style: TextStyle(fontSize: 18.0),
                           ),
                           Text(
-                            '\$ ${product['price']}',
+                            '',
                             style: TextStyle(fontSize: 18.0),
                           ),
                         ],
@@ -150,7 +150,7 @@ class _BodyDetailsState extends State<BodyDetails>
                             borderRadius: BorderRadius.circular(5.0),
                           ),
                           child: Text(
-                            'Add To Bad',
+                            'Add To Cart',
                             style: TextStyle(
                               fontSize: 18.0,
                               color: Colors.white,

@@ -1,5 +1,6 @@
-import 'package:edziban/app/domain/entities/home/product.dart';
+import 'package:edziban/app/presentation/providers/home/products_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import 'body_details.dart';
 
@@ -9,15 +10,16 @@ class Details extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
-    final Map screenArguments = ModalRoute.of(context).settings.arguments;
-    Product product = screenArguments['product'];
-    int index = screenArguments['index'];
+    final productId = ModalRoute.of(context).settings.arguments;
+
+    final productData = Provider.of<ProductsProvider>(context, listen: false);
+    final product = productData.findProductById(productId);
 
     return Scaffold(
       body: Stack(
         children: <Widget>[
           Hero(
-            tag: 'detail_food$index',
+            tag: 'detail_food${product.id}',
             child: Container(
               alignment: Alignment.topCenter,
               width: size.width,
